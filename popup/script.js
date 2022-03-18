@@ -20,14 +20,7 @@ function updateUI(data) {
     return;
   }
 
-  // regulation check
-  if (data.reg != "2019") {
-    dataError.textContent = "GPA calculation done only for regulation 2019 :P";
-    dataError.classList.remove("hidden");
-    return;
-  }
-
-  // continue if everything went fine
+  // success
   dataError.classList.add("hidden");
   dataSuccess.classList.remove("hidden");
   sem.textContent = data.sem;

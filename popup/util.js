@@ -16,6 +16,8 @@ function gradePoint(grade) {
       return 6;
     case "RA":
       return 0;
+    case "SA":
+      return 0;
     default:
       return 0;
   }
