@@ -2,6 +2,8 @@
 
 A Chrome extension for calculating GPA for MIT, Anna University students.
 
+Using Firefox or its forks? Checkout the [Firefox Extension](https://github.com/PragadeshBS/gpaCalcFirefoxExt)
+
 ## Installation
 * Clone this repo
 
