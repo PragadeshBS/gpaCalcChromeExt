@@ -1,13 +1,13 @@
 {
-  "name": "GPA Calculator - MIT, AU",
-  "description": "GPA calculator for MIT, Anna University.",
+  "name": "GPA Calculator - CEG & MIT, AU",
+  "description": "GPA calculator for CEG & MIT, Anna University.",
   "version": "1.0",
   "manifest_version": 3,
   "host_permissions": ["*://acoe.annauniv.edu/sems/student/mark/*"],
   "permissions": ["scripting"],
   "action": {
     "default_popup": "popup/index.html",
-    "default_title": "CGPA Calc"
+    "default_title": "GPA Calculator"
   },
   "icons": {
     "48": "icons/ico-48.png",
