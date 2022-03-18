@@ -17,7 +17,7 @@ Using Firefox or its forks? Checkout the [Firefox Extension](https://github.com/
 
 ### Google Chrome, MS Edge(Chromium), Brave and most other chromium forks
 
-1. Visit chrome://extensions (or) Three dot menu > More tools > Extensions.
+1. Visit chrome://extensions (or) Menu > More tools > Extensions.
 2. Enable **Developer mode**
 3. Choose **Load unpacked** and select the cloned directory (default is gpaCalcChromeExt)
 
