@@ -1,7 +1,8 @@
 # GPA Calculator
 
 A Chrome extension for calculating GPA for CEG & MIT, Anna University students.
-[](https://gpvc.arturio.dev/PragadeshBSgpaCalcChromeExt)
+
+![Visits](https://gpvc.arturio.dev/PragadeshBSgpaCalcChromeExt)
 
 For now, works only for 
 * Regulation 2019 - IT, ECE
