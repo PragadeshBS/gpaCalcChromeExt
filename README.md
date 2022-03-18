@@ -1,6 +1,7 @@
 # GPA Calculator
 
 A Chrome extension for calculating GPA for CEG & MIT, Anna University students.
+
 For now, works only for 
 * Regulation 2019 - IT, ECE
 * Regulation 2018 (RUSA) - CSE
