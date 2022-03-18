@@ -7,7 +7,7 @@ Using Firefox or its forks? Checkout the [Firefox Extension](https://github.com/
 ## Installation
 * Clone this repo
 
-### Google Chrome, Brave, and most other chromium forks
+### Google Chrome, MS Edge(Chromium), Brave and most other chromium forks
 
 1. Visit chrome://extensions (or) Three dot menu > More tools > Extensions.
 2. Enable **Developer mode**
