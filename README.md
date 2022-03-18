@@ -14,6 +14,9 @@ Using Firefox or its forks? Checkout the [Firefox Extension](https://github.com/
 3. Choose **Load unpacked** and select the cloned directory (default is gpaCalcChromeExt)
 
 ## Usage
-Visit the 'Attendance & Marks' section in your SEMS dashboard, then choose the preferred semester for which you want to calculate your GPA. Next, click on the GPA Calculator extension icon in the browser toolbar to view the individual grade points for each subject, as well as the Grade Point Average for that entire semester.
+* Visit the **Attendance & Marks** section in your SEMS dashboard.
+* Choose the preferred semester for which you want to calculate your GPA. 
+* Click on the *GPA Calculator* extension icon in the browser toolbar
+* Voilà you get the individual grade points for each subject, as well as the Grade Point Average for that entire semester.
 
 :star2: Found this useful? Star this repo to show your appreciation 
