@@ -8,29 +8,34 @@
   </head>
 
   <body>
-    <h1 class="display-6">GPA Calculator</h1>
-    <div class="small">For CEG & MIT, AU</div>
-    <div id="popup-content">
-      <div id="data-success" class="hidden">
-        <div class="mt-1 lead text-center">Sem: <span id="sem"></span>/8</div>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Sub</th>
-              <th scope="col">Grade</th>
-              <th scope="col">Credits</th>
-              <th scope="col">Points</th>
-            </tr>
-          </thead>
-          <tbody id="gradesTable"></tbody>
-        </table>
-        <div class="lead text-center">
-          GPA: <span id="gpaCalc"></span
-          ><span id="gpa" class="fw-bold display-6"></span>
+    <div class="header text-center">
+      <h1 class="display-6 fw-bold">GPA Calculator</h1>
+      <small>For CEG & MIT, AU</small>
+    </div>
+    <div class="content">
+      <div id="popup-content">
+        <div id="data-success" class="hidden">
+          <div class="lead text-center pt-1">Sem: <span id="sem"></span>/8</div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Sub</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Credits</th>
+                <th scope="col">Points</th>
+              </tr>
+            </thead>
+            <tbody id="gradesTable"></tbody>
+          </table>
+          <div class="lead text-center">
+            GPA: <span id="gpaCalc"></span
+            ><span id="gpa" class="fw-bold display-6"></span>
+          </div>
         </div>
-      </div>
-      <div id="data-error" class="hidden mt-1">
-        Visit Attendance & Marks section in SEMS to calculate GPA 🐻
+        <div id="data-error">
+          To calculate GPA, visit
+          <b>Attendance & Marks</b> section in SEMS 🐻
+        </div>
       </div>
     </div>
     <script src="data.js"></script>
