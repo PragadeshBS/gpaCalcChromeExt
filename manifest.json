@@ -4,7 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "host_permissions": ["*://acoe.annauniv.edu/sems/student/mark/*"],
-  "permissions": ["scripting"],
+  "permissions": ["scripting", "storage"],
   "action": {
     "default_popup": "popup/index.html",
     "default_title": "GPA Calculator"

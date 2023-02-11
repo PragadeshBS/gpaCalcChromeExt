@@ -1,4 +1,4 @@
-function updateUI(data) {
+async function updateUI(data) {
   // get dom elements
   const dataSuccess = document.getElementById("data-success");
   const sem = document.getElementById("sem");
@@ -80,6 +80,55 @@ function updateUI(data) {
   gpaCalc.textContent = `${pointsSum}/${creditsSum} = `;
   const finalGpa = pointsSum / creditsSum;
   gpa.textContent = finalGpa.toFixed(3);
+  // await chrome.storage.local.set({ secret: "alice123" }, () => {
+  //   console.log("saved");
+  // });
+  // chrome.storage.local.get(["secret"], (result) => {
+  //   document.getElementById("test").textContent =
+  //     "Retrieved name: " + result.secret;
+  // });
+
+  // store this semester's points and credits
+  const contentToStore = {};
+  contentToStore[data.sem] = JSON.stringify({
+    totalPoints: pointsSum,
+    totalCredits: creditsSum,
+  });
+  await chrome.storage.local.set(contentToStore);
+
+  // calculate cgpa
+  let cgpaPointsSum = 0,
+    cgpaCreditsSum = 0;
+
+  await chrome.storage.local.get().then((gpaWithCredits) => {
+    // update the cgpa table
+    for (let i = 1; i <= 8; i++) {
+      const gpaCell = document.getElementById("gpa" + i);
+      const creditsCell = document.getElementById("credits" + i);
+      if (!gpaWithCredits[i]) {
+        gpaCell.textContent = "-";
+        creditsCell.textContent = "-";
+        continue;
+      }
+      const thisSemGpa = JSON.parse(gpaWithCredits[i]);
+      if (thisSemGpa["totalCredits"] == 0 || thisSemGpa["totalPoints"] == 0) {
+        gpaCell.textContent = "-";
+        creditsCell.textContent = "-";
+        continue;
+      }
+      gpaCell.textContent = thisSemGpa["totalPoints"];
+      cgpaPointsSum += thisSemGpa["totalPoints"];
+      creditsCell.textContent = thisSemGpa["totalCredits"];
+      cgpaCreditsSum += thisSemGpa["totalCredits"];
+    }
+  });
+
+  // show cgpa
+  cgpaPointsSum = cgpaPointsSum;
+  const cgpaCalc = document.getElementById("cgpaCalc");
+  cgpaCalc.textContent = `${cgpaPointsSum}/${cgpaCreditsSum}`;
+  const cgpa = document.getElementById("cgpa");
+  cgpa.textContent = (cgpaPointsSum / cgpaCreditsSum).toFixed(3);
 }
 
 function showErr() {

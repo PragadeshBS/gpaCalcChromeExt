@@ -1,29 +1,32 @@
-* {
+*{
   margin: 0;
   padding: 0;
 }
 
 body {
-  width: 300px;
-  padding-bottom: 20px;
+  width: 600px;
 }
 
 .hidden {
   display: none;
 }
 
-.content {
+.content{
   background-color: #fefefe;
   padding: 0 10px;
 }
 
-#data-error {
+#data-error{
   padding: 10px;
   text-align-last: center;
 }
 
-#gpa {
+#gpa{
   color: orangered;
+}
+
+#cgpa{
+  color: darkslateblue;
 }
 
 .header {
