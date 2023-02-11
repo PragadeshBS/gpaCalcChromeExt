@@ -15,7 +15,7 @@ Using Firefox or its forks? Checkout the [Firefox Extension](https://github.com/
 <img src="screenshots/ss1.png" width="75%">
 
 ## Installation
-* Clone this repo
+* Clone this repo or download as zip to your pc
 
 ### Google Chrome, MS Edge(Chromium), Brave and most other chromium forks
 
