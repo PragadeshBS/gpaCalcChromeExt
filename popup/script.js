@@ -8,12 +8,7 @@ function updateUI(data) {
   const dataError = document.getElementById("data-error");
 
   // grades not found
-  if (
-    !data ||
-    !data.grades ||
-    data.grades.length == 0 ||
-    !data.grades[0].grade
-  ) {
+  if (!data || !data.grades || data.grades.length == 0) {
     dataError.textContent =
       "Could not find your grades, try a different sem 👻";
     dataError.classList.remove("hidden");
@@ -112,5 +107,5 @@ getActiveTab().then((tabs) => {
       files: ["content-script.js"],
     })
     .then()
-    .catch(()=>showErr());
+    .catch(() => showErr());
 });
