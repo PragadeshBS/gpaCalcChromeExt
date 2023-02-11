@@ -15,13 +15,13 @@ Using Firefox or its forks? Checkout the [Firefox Extension](https://github.com/
 <img src="screenshots/ss1.png" width="75%">
 
 ## Installation
-* Clone this repo or download as zip to your pc
+* Clone this repo or download as zip (then unzip it somewhere) to your pc
 
 ### Google Chrome, MS Edge(Chromium), Brave and most other chromium forks
 
 1. Visit chrome://extensions (or) Menu > More tools > Extensions.
 2. Enable **Developer mode**
-3. Choose **Load unpacked** and select the cloned directory (default is gpaCalcChromeExt)
+3. Choose **Load unpacked** and select the repo directory (default is gpaCalcChromeExt)
 
 ## Usage
 * Visit the **Attendance & Marks** section in your SEMS dashboard.
