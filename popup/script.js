@@ -80,13 +80,6 @@ async function updateUI(data) {
   gpaCalc.textContent = `${pointsSum}/${creditsSum} = `;
   const finalGpa = pointsSum / creditsSum;
   gpa.textContent = finalGpa.toFixed(3);
-  // await chrome.storage.local.set({ secret: "alice123" }, () => {
-  //   console.log("saved");
-  // });
-  // chrome.storage.local.get(["secret"], (result) => {
-  //   document.getElementById("test").textContent =
-  //     "Retrieved name: " + result.secret;
-  // });
 
   // store this semester's points and credits
   const contentToStore = {};
@@ -95,7 +88,10 @@ async function updateUI(data) {
     totalCredits: creditsSum,
   });
   await chrome.storage.local.set(contentToStore);
+  await calculateCGPA();
+}
 
+async function calculateCGPA() {
   // calculate cgpa
   let cgpaPointsSum = 0,
     cgpaCreditsSum = 0;
@@ -131,11 +127,15 @@ async function updateUI(data) {
   cgpa.textContent = (cgpaPointsSum / cgpaCreditsSum).toFixed(3);
 }
 
-function showErr() {
-  const succ = document.getElementById("data-success");
-  const err = document.getElementById("data-error");
-  err.classList.remove("hidden");
-  succ.classList.add("hidden");
+async function showErr() {
+  const succDiv = document.querySelector("#data-success");
+  const gpaSection = document.querySelector("#gpa-div");
+  const cgpaSection = document.querySelector("#cgpa-div");
+  succDiv.classList.remove("hidden");
+  gpaSection.classList.add("hidden");
+  cgpaSection.classList.remove("col-3");
+  cgpaSection.classList.remove("col-12");
+  await calculateCGPA();
 }
 
 chrome.runtime.onMessage.addListener((message) => {
