@@ -94,7 +94,9 @@ async function updateUI(data) {
 async function calculateCGPA() {
   // calculate cgpa
   let cgpaPointsSum = 0,
-    cgpaCreditsSum = 0;
+    cgpaCreditsSum = 0,
+    xValues = [],
+    yValues = [];
 
   await chrome.storage.local.get().then((gpaWithCredits) => {
     // update the cgpa table
@@ -112,19 +114,56 @@ async function calculateCGPA() {
         creditsCell.textContent = "-";
         continue;
       }
+      xValues.push(i);
       gpaCell.textContent = thisSemGpa["totalPoints"];
       cgpaPointsSum += thisSemGpa["totalPoints"];
       creditsCell.textContent = thisSemGpa["totalCredits"];
       cgpaCreditsSum += thisSemGpa["totalCredits"];
+      yValues.push(cgpaPointsSum / cgpaCreditsSum);
     }
   });
 
   // show cgpa
-  cgpaPointsSum = cgpaPointsSum;
-  const cgpaCalc = document.getElementById("cgpaCalc");
-  cgpaCalc.textContent = `${cgpaPointsSum}/${cgpaCreditsSum}`;
   const cgpa = document.getElementById("cgpa");
+  const cgpaCalc = document.getElementById("cgpaCalc");
+  if (cgpaCreditsSum == 0 && cgpaPointsSum == 0) {
+    cgpa.textContent = "No data available";
+    return;
+  }
+  cgpaCalc.textContent = `${cgpaPointsSum}/${cgpaCreditsSum}`;
   cgpa.textContent = (cgpaPointsSum / cgpaCreditsSum).toFixed(3);
+
+  // plot cgpa graph
+  plotGraph(xValues, yValues);
+}
+
+function plotGraph(x, y) {
+  const trace1 = {
+    x,
+    y,
+    mode: "lines+markers",
+    marker: {
+      color: "darkslateblue",
+      size: 8,
+    },
+    line: {
+      color: "darkslateblue",
+      width: 1,
+    },
+  };
+  const layout = {
+    title: "CGPA Over Semesters",
+    xaxis: {
+      title: "Semester",
+      showgrid: false,
+      zeroline: false,
+    },
+    yaxis: {
+      title: "CGPA",
+      showline: false,
+    },
+  };
+  Plotly.newPlot("plot", [trace1], layout);
 }
 
 async function showErr() {

@@ -1,7 +1,7 @@
 {
   "name": "CGPA Calculator - CEG & MIT, AU",
   "description": "CGPA calculator for CEG & MIT, Anna University.",
-  "version": "2.1",
+  "version": "2.2",
   "manifest_version": 3,
   "host_permissions": ["*://acoe.annauniv.edu/sems/student/mark/*"],
   "permissions": ["scripting", "storage"],
