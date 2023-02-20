@@ -1,4 +1,4 @@
-# GPA Calculator
+# CGPA Calculator - Chrome Extension
 
 A Chrome extension for calculating CGPA for CEG & MIT, Anna University students.
 
